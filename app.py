@@ -26,7 +26,7 @@ def main(url):
         'div', attrs={'class': 'jupiterx-content'})
     contents = all_content.findAll('article', attrs={'class': 'jupiterx-post'})
     f_present = open("id.txt", "r")
-    if contents[0]['id'] == f_present.read():
+    if contents[0]['id'] > f_present.read():
         f = open("id.txt", "w")
         f.write(contents[0]['id'])
         f.close()
